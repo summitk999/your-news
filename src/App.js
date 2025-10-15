@@ -21,7 +21,7 @@ function App() {
                 <News
                   key={path.key}
                   newscategory={path.category}
-                  country={path.country}
+                  countries={path.country}
                 />
               }
             />

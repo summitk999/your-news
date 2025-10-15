@@ -11,7 +11,7 @@ import { endpointPath } from "../../config/api";
 import { Container, Header, card } from "./index";
 
 function News(props) {
-  const { newscategory, country } = props;
+  const { newscategory, countries } = props;
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,10 +25,10 @@ function News(props) {
 
   const updatenews = async () => {
     try {
-      const response = await axios.get(endpointPath(country, category));
+      const response = await axios.get(endpointPath(countries, category));
       setLoading(true);
       const parsedData = response.data;
-      setArticles(parsedData.articles);
+      setArticles(parsedData.data);
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -56,7 +56,7 @@ function News(props) {
                       title={element.title}
                       description={element.description}
                       published={element.publishedAt}
-                      channel={element.source.name}
+                      channel={element.source}
                       alt="News image"
                       publishedAt={element.publishedAt}
                       imageUrl={

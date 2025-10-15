@@ -69,7 +69,7 @@ function NavBar() {
               </LinkContainer>
             ))}
           </Nav>
-          <Form className="search-form" onSubmit={handleSubmit}>
+          {/* <Form className="search-form" onSubmit={handleSubmit}>
             <FormControl
               type="text"
               placeholder="Explore news..."
@@ -84,7 +84,7 @@ function NavBar() {
             >
               Search
             </Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Navbar>
     </>
